@@ -1,0 +1,54 @@
+1. leer matriz
+2. conexidad por potencias (inicial)
+3. loop conectividad (k = vertices maximos a eliminar)
+	posibles combinaciones de vertices (conjunto tamaño k)
+	eliminar los vertices
+	revisar conexidad
+		rompe conexidad (k = iteraciones k)
+4. conectividad = k
+
+
+Mvalidacion = matriz (+1 en diagonal)
+for(vertices-1)
+	funcion(matriz, Mvalidacion)
+	matriz*matriz
+	Mvalidacion(guardan != 0)
+
+	return matriz,Mvalidacion
+
+leer
+k=0
+ver si el original es conexo
+k=1
+for(i=0; i<vertices)
+	eliminacion()
+	conexidad()
+	si se rompe k=1
+k++
+for(i=0; i<vertices)
+	for(i+1; j<vertices)
+		eliminacion()
+		conexidad()
+		si se rompe K=2
+k++
+for(i=0; i<vertices, ++)
+	for(j=i+1; j<vertices, ++)
+		for(k=j+1; k<vertices, ++)
+		eliminacion()
+		conexidad()
+		si se rompe K=3
+k++
+for(i=0; i<vertices)
+	for(j=i+1; j<vertices)
+		for(k=j+1; k<vertices)
+			for(l=k+1, l<vertices)
+			eliminacion()
+			conexidad()
+			si se rompe K=4
+
+
+**Ver si funciona y ver si hay que sumar++
+
+por hacer:
+1. funcion de conexidad
+2. funcion de eliminacion 
