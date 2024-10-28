@@ -5,14 +5,7 @@
 
 #define MAX 1000
 
-void conexidad(int n, int matriz[n][n]){
-    int resultado[n][n];
-	for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            resultado[i][j] = 0;
-        }
-    }
-
+int** potencia(int n, int matriz[n][n], int resultado[n][n]){
     for(int l = 0; l < n-1; l++){
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
@@ -21,10 +14,13 @@ void conexidad(int n, int matriz[n][n]){
 				}
 			}
 		}
-	
     }
+	return resultado;
+}
 
-    for (int i = 0; i < n; i++){
+
+void conexidad(int n, int resultado[n][n]){
+	for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
             printf("%d ", resultado[i][j]);
             if (resultado[i][j] == 0){
@@ -34,7 +30,6 @@ void conexidad(int n, int matriz[n][n]){
         }
         printf("\n");
     }
-
 }
 
 int main() {
@@ -108,7 +103,14 @@ int main() {
 	}
 	fclose(G);
 
-    conexidad(size, matriz);
+    int resultado[size][size];
+	for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            resultado[i][j] = 0;
+        }
+    }
+    potencia(size, matriz, resultado);
+    conexidad(size, resultado);
     
 	return 0;
 }
