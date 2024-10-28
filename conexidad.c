@@ -14,24 +14,20 @@ void conexidad(int n, int matriz[n][n]){
     }
 
     for(int l = 0; l < n-1; l++){
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < n; k++) {
-                    resultado[i][j] += matriz[i][k] * matriz[k][j];
-                }
-            }
-        }
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                matriz[i][j] = resultado[i][j];
-                resultado[i][j] = 0;
-            }
-        }
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				for (int k = 0; k < n; k++) {
+					resultado[i][j] += matriz[i][k] * matriz[k][j];
+				}
+			}
+		}
+	
     }
+
     for (int i = 0; i < n; i++){
         for (int j = 0; j < n; j++){
-            printf("%d ", matriz[i][j]);
-            if (matriz[i][j] == 0){
+            printf("%d ", resultado[i][j]);
+            if (resultado[i][j] == 0){
                 printf("NO es conexo");
                 break;
             }
